@@ -7,11 +7,40 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
-img {
-  border-radius: 5%;
+
+/* Container for list of engines */
+.list_of_engine_main_container {
+  border: solid 4px rgb(0, 0, 0);
+  display: flex;
+}
+
+
+.item_controller {
+  margin: 10px;
+  border: solid 1px rgb(0, 0, 0);
+}
+
+
+.list_of_engine_container {
+  margin: 10px;
+  border: solid 1px rgb(0, 0, 0);
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+.list_of_engine_row {
+  margin: 4px;
+  padding: 4px;
+  border: 1px solid rgb(0, 0, 0);
+
+  display: flex;
+  flex-direction: column;
 }

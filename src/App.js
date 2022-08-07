@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import LandingPageDisplayer from "./components/LandingPageDisplayer";
+import Dashboard from "./components/Dashboard";
 
 const App = () => {
   return (
     <>
       <Router>
         <Routes>
-          <Route path='/engine_departments' exact element={<LandingPageDisplayer />} />
+          <Route path='/engine_department' exact element={<Dashboard />} />
         </Routes>
       </Router>
     </>
