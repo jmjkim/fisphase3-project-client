@@ -1,7 +1,6 @@
 import React from 'react';
 
-
-const EngineDisplayer = ({ engines }) => {
+const EngineDisplayer = ({ engines, setUpdateFormData }) => {
     const destructuredObj = engines.map(({ 
         department_id,
         manufactured_engine_id,
@@ -13,7 +12,7 @@ const EngineDisplayer = ({ engines }) => {
         connecting_rod_built,
         crankshaft_built,
         sump_built,
-        camshaft_drvie_belt_built,
+        camshaft_drive_belt_built,
         completed,
         remark 
     }) => {
@@ -28,7 +27,7 @@ const EngineDisplayer = ({ engines }) => {
             connecting_rod: connecting_rod_built,
             crankshaft: crankshaft_built,
             sump: sump_built,
-            camshaft_drive_belt: camshaft_drvie_belt_built,
+            camshaft_drive_belt: camshaft_drive_belt_built,
             completed,
             remark 
         } 
@@ -37,34 +36,45 @@ const EngineDisplayer = ({ engines }) => {
         return destructuringObj
     });
 
+    const arr_of_keys = [ "id", "vin", "layout", "department_id", "completed", "remark" ]
     
     return destructuredObj.map(( engine, key ) => {
         return (
             <React.Fragment key={ key }>
-                <div className="list_of_engine_row">
-                    <div><b>ID</b>: {engine.id}</div>
-                    <div><b>VIN</b>: {engine.vin}</div>
-                    <div><b>Layout</b>: {engine.layout}</div>
+                <div className="list_of_engine_row" onClick={() => {
+                    fetch(`http://localhost:9292/engine_department/${engine.id}`)
+                    .then(r => r.json())
+                    .then(engine => setUpdateFormData(engine))
+                    .catch(err => alert( err.message ))
+                }}>
 
+                    <div className="list_of_engine_part_grid_container">
+                        { Object.entries( engine ).map( entry => {
+                            if ( arr_of_keys.every( keyName => keyName !== entry[0] )) {
+                                return ( <div key={ entry[0] }>{ entry[1] ? <div className="completed_status">{ entry[0] }</div> : 
+                                                                            <div className="incompleted_status">{ entry[0] }</div> }
+                                         </div> )}})}
+                    </div>
+                            
+                    <div className="list_of_engine_non_part_container">
+                        { Object.entries( engine ).map( entry => arr_of_keys.map( keyName => {
+                            if ( keyName === entry[0] && keyName !== "id" && keyName !== "department_id" && keyName !== "completed" && keyName !== "remark" ) {
+                                return ( <div key={ entry[0] }>
+                                            <span style={{ "font-weight": "bold" }}>{ entry[0] }</span>: { entry[1] }
+                                         </div> )}
 
-                <div className="list_of_engine_row_grid_container">
-                    {engine.camshaft ? <div className="completed_status">camshaft</div> : <div className="incompleted_status">camshaft</div>}
-                    {engine.piston ? <div className="completed_status">piston</div> : <div className="incompleted_status">piston</div>}
-                    {engine.flywheel ? <div className="completed_status">flywheel</div> : <div className="incompleted_status">flywheel</div>}
-                    {engine.connecting_rod ? <div className="completed_status">connecting_rod</div> : <div className="incompleted_status">connecting_rod</div>}
-                    {engine.crankshaft ? <div className="completed_status">crankshaft</div> : <div className="incompleted_status">crankshaft</div>}
-                    {engine.sump ? <div className="completed_status">sump</div> : <div className="incompleted_status">sump</div>}
-                    {engine.camshaft_drive_belt ? <div className="completed_status">camshaft_drive_belt</div> : <div className="incompleted_status">camshaft_drive_belt</div>}
-                </div>
-
-
-                    <div><b>Remark</b>: {engine.remark}</div>
+                            if ( keyName === entry[0] && keyName === "remark") {
+                                return ( <div key={ entry[0] }>
+                                            <span style={{ "font-weight": "bold" }}>{ entry[0] }</span>: <br></br><br></br>
+                                            <div id="remark_content">{ entry[1] }</div>
+                                         </div> )}
+                            }))}
+                    </div>    
                 </div>
             </React.Fragment>
             )
         }
     )
 }
-
 
 export default EngineDisplayer;

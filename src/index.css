@@ -1,3 +1,7 @@
+* {
+  border-radius: 5px;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -15,6 +19,7 @@ code {
 
 
 .engine_manager_form_container {
+  overflow: scroll;
   margin: 10px;
   padding: 4px;
   border: solid 1px rgb(0, 0, 0);
@@ -31,41 +36,52 @@ code {
 }
 
 .list_of_engine_container {
+  overflow: scroll;
   margin: 10px;
   padding: 10px;
   border: solid 1px rgb(0, 0, 0);
 
   display: grid;
   grid-gap: 10px;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr) ) ;
+  grid-template-columns: auto auto auto auto;
 }
-
 
 .list_of_engine_row {
   padding: 10px;
   border: 1px solid rgb(0, 0, 0);
 
-  display: flex;
-  flex-direction: column;
-}
-
-.list_of_engine_row_grid_container {
-  display: grid;
-  grid-template-columns: auto auto;
-  border: 1px dotted rgb(0, 0, 0);
-}
-
-
-.completed_status {
-  color: rgb(50, 200, 50);
-}
-
-.incompleted_status {
-  color: rgb(250, 50, 50);
+  inline-size: 400px;
 }
 
 .list_of_engine_row div {
   padding: 4px;
+}
+
+.list_of_engine_part_grid_container {
+  display: grid;
+  padding: 4px;
+  grid-template-columns: auto auto;
+  border: 1px dotted rgb(0, 0, 0);
+  overflow: scroll;
+}
+
+.list_of_engine_non_part_container {
+  text-transform: capitalize;
+}
+
+#remark_content {
+  overflow: scroll;
+  inline-size: auto;
+}
+
+.completed_status {
+  text-transform: uppercase;
+  color: rgb(50, 200, 50);
+}
+
+.incompleted_status {
+  text-transform: uppercase;
+  color: rgb(250, 50, 50);
 }
 
 .list_of_engine_row:hover {
