@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from "react";
 import EngineDisplayer from "./EngineDisplayer";
+import EngineManager from './EngineManager';
 
 
 const Dashboard = () => {
@@ -19,13 +20,11 @@ const Dashboard = () => {
         <>
             <h1>Welcome to Engine Manufacturing Status Manager</h1>
 
-            {/* crud component*/}
             {/* search component*/}
-
-            <div className="list_of_engine_main_container">
-                <div className="list_of_engine_container">
-                    <EngineDisplayer engines={ engines } />
-                </div>
+            <EngineManager engines={ engines }/>
+            
+            <div className="list_of_engine_container">
+                <EngineDisplayer engines={ engines } />
             </div>
         </>
     )
