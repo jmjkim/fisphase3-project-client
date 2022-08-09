@@ -23,6 +23,7 @@ code {
   margin: 10px;
   padding: 4px;
   border: solid 1px rgb(0, 0, 0);
+  background-color: rgb(240, 240, 240);
   display: flex;
 }
 
@@ -31,8 +32,15 @@ code {
   margin: 10px;
   padding: 10px;
   border: solid 1px rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
+}
+
+.list_of_engine_part_update_form_grid_container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: auto auto;
 }
 
 .list_of_engine_container {
@@ -44,13 +52,14 @@ code {
   display: grid;
   grid-gap: 10px;
   grid-template-columns: auto auto auto auto;
+  background-color: rgb(255, 255, 255);
 }
 
 .list_of_engine_row {
   padding: 10px;
-  border: 1px solid rgb(0, 0, 0);
-
+  border: 1px solid rgb(150, 150, 150);
   inline-size: 400px;
+  background-color: rgb(240, 240, 240);
 }
 
 .list_of_engine_row div {
@@ -62,7 +71,9 @@ code {
   padding: 4px;
   grid-template-columns: auto auto;
   border: 1px dotted rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
   overflow: scroll;
+  
 }
 
 .list_of_engine_non_part_container {
@@ -86,5 +97,5 @@ code {
 
 .list_of_engine_row:hover {
   cursor: pointer;
-  background-color: rgb(240, 240, 240);
+  background-color: rgb(240, 255, 240);
 }

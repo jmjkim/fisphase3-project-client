@@ -65,7 +65,8 @@ const EngineDisplayer = ({ engines, setUpdateFormData }) => {
 
                             if ( keyName === entry[0] && keyName === "remark") {
                                 return ( <div key={ entry[0] }>
-                                            <span style={{ "font-weight": "bold" }}>{ entry[0] }</span>: <br></br><br></br>
+                                            <span style={{ "font-weight": "bold" }}>{ entry[0] }</span>: 
+                                            <br></br><br></br>
                                             <div id="remark_content">{ entry[1] }</div>
                                          </div> )}
                             }))}

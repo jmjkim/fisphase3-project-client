@@ -29,11 +29,11 @@ const CreateForm = () => {
     }
 
     return (
-        <form onSubmit={handleCreateSubmit}>
+        <form onSubmit={ handleCreateSubmit }>
             <div className="create_engine_form">
                 <b>Create New Engine</b>
                 <label>Layout: <input id="create_engine_layout_input" name="engine_layout" type="text" placeholder="Inline,Flat,V,4,6,8,10" onChange={handleCreateChange}/></label>
-                <label>Remark: <input id="create_engine_remark" name="remark" type="text" maxLength={100} onChange={handleCreateChange}/></label>
+                <label>Remark: <input id="create_engine_remark_input" name="remark" type="text" maxLength={ 100 } onChange={handleCreateChange}/></label>
                 <input type="submit" value="Create" />
             </div>
         </form>
