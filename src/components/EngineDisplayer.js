@@ -44,7 +44,7 @@ const EngineDisplayer = ({ engines, setUpdateFormData }) => {
                 <div className="list_of_engine_row" onClick={() => {
                     fetch(`http://localhost:9292/engine_department/${engine.id}`)
                     .then(r => r.json())
-                    .then(engine => setUpdateFormData(engine))
+                    .then(engine => setUpdateFormData( engine ))
                     .catch(err => alert( err.message ))
                 }}>
 
@@ -58,15 +58,16 @@ const EngineDisplayer = ({ engines, setUpdateFormData }) => {
                             
                     <div className="list_of_engine_non_part_container">
                         { Object.entries( engine ).map( entry => arr_of_keys.map( keyName => {
-                            if ( keyName === entry[0] && keyName !== "id" && keyName !== "department_id" && keyName !== "completed" && keyName !== "remark" ) {
+                            if ( keyName === entry[0] && keyName !== "department_id" && keyName !== "completed" && keyName !== "remark" ) {
                                 return ( <div key={ entry[0] }>
-                                            <span style={{ "font-weight": "bold" }}>{ entry[0] }</span>: { entry[1] }
+                                            <span>{ entry[0] }: { entry[1] }</span>
                                          </div> )}
 
                             if ( keyName === entry[0] && keyName === "remark") {
                                 return ( <div key={ entry[0] }>
-                                            <span style={{ "font-weight": "bold" }}>{ entry[0] }</span>: 
-                                            <br></br><br></br>
+                                            <span>{ entry[0] }</span>: 
+                                            <br></br>
+                                            <br></br>
                                             <div id="remark_content">{ entry[1] }</div>
                                          </div> )}
                             }))}

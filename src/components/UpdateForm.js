@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 const UpdateForm = ( updateFormData ) => {
-    const [ formData, setFormData ] = useState( updateFormData
+    const [ formData, setFormData ] = useState({
         // manufactured_engine_id: "",
         // associated_vehicle_vin: "",
         // engine_layout: "",
@@ -15,7 +15,7 @@ const UpdateForm = ( updateFormData ) => {
         // camshaft_drive_belt_built: null,
         // completed: null,
         // remark: ""
-    )
+    })
 
     const [ isChecked, setIsChecked ] = useState( false )
 
@@ -23,7 +23,6 @@ const UpdateForm = ( updateFormData ) => {
     const handleCheckChange = ( e ) => {
 
     }
-
 
     const handleUpdateChange = ( e ) => {
         // setFormData({
@@ -50,16 +49,17 @@ const UpdateForm = ( updateFormData ) => {
             <form onSubmit={ handleUpdateSubmit }>
                 <div className="update_engine_form">
                     <b>Update Engine</b>
+                    <br></br>
 
-                    <div className="list_of_engine_part_update_form_grid_container">
                     { arr_of_engine_keys.map( key => { 
                         if ( key !== "id" && key !== "department_id" && key !== "manufactured_engine_id" && key !== "associated_vehicle_vin" && key !== "engine_layout" && key !== "completed" && key !== "remark" ) {
-                            return ( <label key={ key }>{ key }<input id={ `update_engine_${ key }_input` } type="checkbox" checked={ isChecked } onChange={ handleCheckChange } /></label> )}
+                            return ( <label>{ key }<input id={ `update_engine_${ key }_input` } type="checkbox" checked={ Object.values(updateFormData)[0][key] } onChange={ handleCheckChange } /></label> )}
 
                         if ( key === "manufactured_engine_id" || key === "associated_vehicle_vin" || key === "engine_layout" ) {
-                            return ( <label key={ key }>{ key }: <input id={ `update_engine_${ key }_input` } type="text" onChange={ handleUpdateChange } /></label> )}})}
-                    </div>
+                            return ( <label key={ key }>{ key }: <br></br>
+                                     <input id={ `update_engine_${ key }_input` } type="text" value={ Object.values(updateFormData)[0][key] } onChange={ handleUpdateChange } /></label> )}})}
 
+                    <br></br>
                     <input type="submit" value="Update" />
                 </div>
             </form>
