@@ -1,55 +1,67 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 
 const EngineDisplayer = ({ engines }) => {
     const arrayOfEngineObj = Object.values( engines )
 
+
     return (
         <div className="list_of_engine_container">
-                    { arrayOfEngineObj.map( engine => {
-                        return (
-                            <React.Fragment key={ engine.id }>
-                                <div className="list_of_engine_row">
-                                    #{ engine.id }
-                                    <div className="list_of_engine_non_part_container">
-                                        <b>Engine ID:</b> { engine.manufactured_engine_id  }
-                                        <br></br>
+            { arrayOfEngineObj.map(( engine, index ) => {
+                return (
+                    <React.Fragment key={ engine.id }>
+                        <div className="list_of_engine_row">
+                            <div className="number_of_engine_container">
+                                #{ index + 1 }
+                            </div>
 
-                                        <b>VIN:</b> { engine.associated_vehicle_vin }
-                                        <br></br>
-
-                                        <b>Layout:</b> { engine.engine_layout }
-                                        <br></br>
-
-                                        <b>Remark:</b> <div id="remark_content">{ engine.remark }</div>
-                                        <br></br>
-                                    </div>
-
-                                    <div className="list_of_engine_part_grid_container"> 
-                                        { engine.camshaft_built ? <div className="completed_status">camshaft_built</div> :
-                                                                  <div className="incompleted_status">camshaft</div> }
-
-                                        { engine.piston_built ? <div className="completed_status">piston_built</div> :
-                                                                <div className="incompleted_status">piston</div> }
-
-                                        { engine.flywheel_built ? <div className="completed_status">flywheel_built</div> :
-                                                                  <div className="incompleted_status">flywheel</div> }
-
-                                        { engine.connecting_rod_built ? <div className="completed_status">connecting_rod_built</div> :
-                                                                        <div className="incompleted_status">connecting_rod</div> }
-
-                                        { engine.crankshaft_built ? <div className="completed_status">crankshaft_built</div> :
-                                                                    <div className="incompleted_status">crankshaft</div> }
-
-                                        { engine.sump_built ? <div className="completed_status">sump_built</div> :
-                                                              <div className="incompleted_status">sump</div> }
-
-                                        { engine.camshaft_drive_belt_built ? <div className="completed_status">camshaft_drive_belt_built</div> :
-                                                                             <div className="incompleted_status">camshaft_drive_belt</div> }
-                                    </div>
+                            <div className="list_of_engine_non_part_container">
+                                <div>
+                                    <b>Engine ID:</b> { engine.manufactured_engine_id  }
                                 </div>
-                            </React.Fragment>
-                        )})}
+
+                                <div>
+                                    <b>VIN:</b> { engine.associated_vehicle_vin }
+                                </div>
+
+                                <div>
+                                    <b>Layout:</b> { engine.engine_layout }
+                                </div>
+
+                                <div>
+                                    <b>Remark:</b> { engine.remark }
+                                </div>
+                            </div>
+
+                            <div className="status_indicator">
+                                <div className="completed_status">Complete</div>
+                                <div className="incompleted_status">Incomplete</div>
+                            </div>
+
+                            <div className="list_of_engine_part_grid_container"> 
+                                { engine.camshaft_built ? <div className="completed_status">camshaft_built</div> :
+                                                          <div className="incompleted_status">camshaft_built</div> }
+
+                                { engine.piston_built ? <div className="completed_status">piston_built</div> :
+                                                        <div className="incompleted_status">piston_built</div> }
+
+                                { engine.flywheel_built ? <div className="completed_status">flywheel_built</div> :
+                                                          <div className="incompleted_status">flywheel_built</div> }
+
+                                { engine.connecting_rod_built ? <div className="completed_status">connecting_rod_built</div> :
+                                                                <div className="incompleted_status">connecting_rod_built</div> }
+
+                                { engine.crankshaft_built ? <div className="completed_status">crankshaft_built</div> :
+                                                            <div className="incompleted_status">crankshaft_built</div> }
+
+                                { engine.sump_built ? <div className="completed_status">sump_built</div> :
+                                                      <div className="incompleted_status">sump_built</div> }
+
+                                { engine.camshaft_drive_belt_built ? <div className="completed_status">camshaft_drive_belt_built</div> :
+                                                                     <div className="incompleted_status">camshaft_drive_belt_built</div> }
+                            </div>
+                        </div>
+                    </React.Fragment>
+                )})}
         </div>
     )
 }

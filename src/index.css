@@ -11,23 +11,67 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.app_title {
+  margin-top: 0;
+  padding: 10px;
+  text-align: center;
+  background-color: rgb(240, 240, 240);
+}
+
+.crud_form_button {
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  right: 20px;
+  bottom: 60px;
+}
+
+.crud_form_button input {
+  display: flex;
+  margin-left: 4px;
+  cursor: pointer;
+}
 
 .list_of_engine_container {
   display: grid;
-  gap: 20px;
-  grid-template-columns: auto auto auto;
+  gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr;
   padding: 20px;
 }
 
+.number_of_engine_container {
+  display: flex;
+  justify-content: right;
+}
+
 .list_of_engine_row {
-  border: 2px solid rgb(140, 140, 140);
+  background-color: rgb(240, 240, 240);
+  text-transform: uppercase;
+  text-align: left;
+  border: 1px solid rgb(0, 0, 0);
   padding: 10px;
-  inline-size: 500px;
+}
+
+.list_of_engine_non_part_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: auto;
+  height: 140px;
+  border: 1px solid rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  overflow: scroll;
+}
+
+.status_indicator {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-around;
 }
 
 .list_of_engine_row:hover {
@@ -40,12 +84,6 @@ code {
 }
 
 
-
-.list_of_engine_non_part_container {
-  display: grid;
-  grid-template-columns: auto auto;
-  text-transform: uppercase;
-}
 
 
 
@@ -87,19 +125,11 @@ code {
   
 }
 
-
-#remark_content {
-  overflow: scroll;
-  inline-size: auto;
-}
-
 .completed_status {
-  text-transform: uppercase;
   color: rgb(50, 200, 50);
 }
 
 .incompleted_status {
-  text-transform: uppercase;
   color: rgb(250, 50, 50);
 }
 
