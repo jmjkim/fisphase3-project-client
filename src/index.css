@@ -17,15 +17,39 @@ code {
     monospace;
 }
 
-
-.engine_manager_form_container {
-  overflow: scroll;
-  margin: 10px;
-  padding: 4px;
-  border: solid 1px rgb(0, 0, 0);
-  background-color: rgb(240, 240, 240);
-  display: flex;
+.list_of_engine_container {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: auto auto auto;
+  padding: 20px;
 }
+
+.list_of_engine_row {
+  border: 2px solid rgb(140, 140, 140);
+  padding: 10px;
+  inline-size: 500px;
+}
+
+.list_of_engine_row:hover {
+  cursor: pointer;
+  background-color:rgb(200, 255, 200);
+}
+
+.list_of_engine_row:active {
+  background-color:rgb(230, 255, 230);
+}
+
+
+
+.list_of_engine_non_part_container {
+  display: grid;
+  grid-template-columns: auto auto;
+  text-transform: uppercase;
+}
+
+
+
+
 
 .list_of_engine_non_part_create_form_grid_container input {
   display: grid;
@@ -49,25 +73,6 @@ code {
   grid-template-columns: auto auto;
 }
 
-.list_of_engine_container {
-  overflow: scroll;
-  margin: 10px;
-  padding: 10px;
-  border: solid 1px rgb(0, 0, 0);
-
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: auto auto auto auto;
-  background-color: rgb(255, 255, 255);
-}
-
-.list_of_engine_row {
-  padding: 10px;
-  border: 1px solid rgb(150, 150, 150);
-  inline-size: 400px;
-  background-color: rgb(240, 240, 240);
-}
-
 .list_of_engine_row div {
   padding: 4px;
 }
@@ -82,9 +87,6 @@ code {
   
 }
 
-.list_of_engine_non_part_container {
-  text-transform: uppercase;
-}
 
 #remark_content {
   overflow: scroll;
@@ -99,11 +101,6 @@ code {
 .incompleted_status {
   text-transform: uppercase;
   color: rgb(250, 50, 50);
-}
-
-.list_of_engine_row:hover {
-  cursor: pointer;
-  background-color: rgb(240, 255, 240);
 }
 
 input[submit] {

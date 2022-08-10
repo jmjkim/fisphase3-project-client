@@ -1,7 +1,10 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 const CreateForm = () => {
+    const navigateTo = useNavigate()
+
     const [ formData, setFormData ] = useState({
         engine_layout: "",
         remark: ""
@@ -33,12 +36,13 @@ const CreateForm = () => {
                 <br></br>
 
                 <label>Layout: <br></br>
-                <input id="create_engine_layout_input" name="engine_layout" type="text" placeholder="Inline,Flat,V,4,6,8,10" onChange={handleCreateChange} required="true" /></label>
+                <input id="create_engine_layout_input" name="engine_layout" type="text" placeholder="Inline,Flat,V,4,6,8,10" onChange={handleCreateChange} required={true} /></label>
                 <label>Remark: <br></br>
                 <input id="create_engine_remark_input" name="remark" type="text" maxLength={ 100 } onChange={handleCreateChange} /></label>
                 <br></br>
-                
+
                 <input type="submit" value="Create" />
+                <input type="button" value="Back to Dashboard" onClick={() => navigateTo( "/engine_department" )} />
             </div>
         </form>
     )
