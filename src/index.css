@@ -15,6 +15,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 .app_title {
   margin-top: 0;
   padding: 10px;
@@ -36,6 +37,10 @@ code {
 
 .crud_form_button_container input {
   cursor: pointer;
+}
+
+.crud_form_button_container input:focus {
+  background-color: rgb(200, 255, 200);
 }
 
 .search_engine_form,
@@ -92,7 +97,7 @@ code {
 
 .number_of_engine_container {
   display: flex;
-  justify-content: right;
+  justify-content: flex-start;
 }
 
 .list_of_engine_row {
@@ -142,7 +147,6 @@ code {
 .list_of_engine_row:active {
   background-color:rgb(230, 255, 230);
 }
-
 
 .completed_status {
   color: rgb(50, 200, 50);
