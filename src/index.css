@@ -22,19 +22,65 @@ code {
   background-color: rgb(240, 240, 240);
 }
 
-.crud_form_button {
-  cursor: pointer;
+.crud_form_button_container {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
   position: relative;
   right: 20px;
-  bottom: 60px;
 }
 
-.crud_form_button input {
-  display: flex;
-  margin-left: 4px;
+.create_form_button {
+  padding: 0 80px;
+}
+
+.crud_form_button_container input {
   cursor: pointer;
+}
+
+.search_engine_form,
+.delete_engine_form {
+  display: flex;
+  margin: 10px 0;
+}
+
+.create_engine_form {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(0, 0, 0);
+  padding: 10px;
+  width: 25%;
+  text-align: center;
+}
+
+.create_engine_form input {
+  margin: 4px 0;
+}
+
+.update_engine_form_container {
+  margin: auto;
+  width: 25%;
+  padding: 10px;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.update_non_engine_part_form {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.update_engine_part_form {
+  display: grid;
+  grid-template-columns: auto auto;
+  margin: 20px 0;
+}
+
+.update_engine_form_container_button {
+  margin-top: 6px;
+  justify-content: center;
+  width: 100%;
 }
 
 .list_of_engine_container {
@@ -57,6 +103,10 @@ code {
   padding: 10px;
 }
 
+.list_of_engine_row div {
+  padding: 4px;
+}
+
 .list_of_engine_non_part_container {
   display: flex;
   flex-direction: column;
@@ -68,8 +118,18 @@ code {
   overflow: scroll;
 }
 
-.status_indicator {
+.list_of_engine_part_dotted_container {
   font-weight: bold;
+  display: grid;
+  padding: 4px;
+  grid-template-columns: auto auto;
+  border: 1px dotted rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  overflow: scroll;
+  text-align: center;
+}
+
+.status_indicator {
   display: flex;
   justify-content: space-around;
 }
@@ -84,55 +144,10 @@ code {
 }
 
 
-
-
-
-
-
-.list_of_engine_non_part_create_form_grid_container input {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: auto;
-}
-
-.create_engine_form,
-.update_engine_form {
-  margin: 10px;
-  padding: 10px;
-  border: solid 1px rgb(0, 0, 0);
-  background-color: rgb(255, 255, 255);
-  display: flex;
-  flex-direction: column;
-}
-
-.list_of_engine_part_update_form_grid_container input {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: auto auto;
-}
-
-.list_of_engine_row div {
-  padding: 4px;
-}
-
-.list_of_engine_part_grid_container {
-  display: grid;
-  padding: 4px;
-  grid-template-columns: auto auto;
-  border: 1px dotted rgb(0, 0, 0);
-  background-color: rgb(255, 255, 255);
-  overflow: scroll;
-  
-}
-
 .completed_status {
   color: rgb(50, 200, 50);
 }
 
 .incompleted_status {
   color: rgb(250, 50, 50);
-}
-
-input[submit] {
-  cursor: pointer;
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import NavBar from "./components/Navbar";
 import EngineDisplayer from "./components/EngineDisplayer";
 import CreateForm from "./components/CreateForm";
@@ -7,13 +8,12 @@ import UpdateForm from "./components/UpdateForm";
 
 const App = () => {
   document.title = "EMNF-S"
-
   const [ engines, setEngines ] = useState([])
 
   useEffect(() => {
       fetch("http://localhost:9292/engine_department")
       .then(r => r.json())
-      .then(setEngines)
+      .then( setEngines )
       .catch(err => alert( err.message ))
     }, [])
 

@@ -33,13 +33,10 @@ const CreateForm = () => {
         <form onSubmit={ handleCreateSubmit }>
             <div className="create_engine_form">
                 <b>Create New Engine</b>
-                <br></br>
+                <br />
 
-                <label>Layout: <br></br>
-                <input id="create_engine_layout_input" name="engine_layout" type="text" placeholder="Inline,Flat,V,4,6,8,10" onChange={handleCreateChange} required={true} /></label>
-                <label>Remark: <br></br>
-                <input id="create_engine_remark_input" name="remark" type="text" maxLength={ 100 } onChange={handleCreateChange} /></label>
-                <br></br>
+                <label>Layout <input id="create_engine_layout_input" name="engine_layout" type="text" placeholder="ex: Inline10" onChange={handleCreateChange} required={true} /></label>
+                <label>Remark <input id="create_engine_remark_input" name="remark" type="text" maxLength={ 100 } onChange={handleCreateChange} /></label>
 
                 <input type="submit" value="Create" />
                 <input type="button" value="Back to Dashboard" onClick={() => navigateTo( "/engine_department" )} />
