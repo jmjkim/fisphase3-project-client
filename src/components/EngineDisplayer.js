@@ -6,7 +6,7 @@ const EngineDisplayer = () => {
     const navigateTo = useNavigate()
 
     useEffect(() => {
-        fetch("http://localhost:9292/engine_department")
+        fetch("http://localhost:9292/engine_department/engines")
         .then(r => r.json())
         .then(setEngines)
         .catch(err => alert(err.message))
@@ -31,6 +31,7 @@ const EngineDisplayer = () => {
                             </div>
 
                             <div className="list_of_engine_non_part_container">
+                                <div><b>Engine Size:</b> {engine.engine_size}</div>
                                 <div><b>Engine ID:</b> <span id="manufactured_engine_id">{engine.manufactured_engine_id}</span></div>
                                 <div><b>VIN:</b> {engine.associated_vehicle_vin}</div>
                                 <div><b>Layout:</b> {engine.engine_layout}</div>

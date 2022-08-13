@@ -16,9 +16,9 @@ const App = () => {
       <Router>
         <NavBar/>
         <Routes>
-          <Route path="/engine_department" exact element={<EngineDisplayer/>}/>
-          <Route path="/engine_department/create" exact element={<CreateForm/>}/>
-          <Route path="/engine_department/update" exact element={<UpdateForm/>}/>
+          <Route path="/engine_department/engines" exact element={<EngineDisplayer/>}/>
+          <Route path="/engine_department/engines/create" exact element={<CreateForm/>}/>
+          <Route path="/engine_department/engines/update" exact element={<UpdateForm/>}/>
         </Routes>
       </Router>
     </React.Fragment>
