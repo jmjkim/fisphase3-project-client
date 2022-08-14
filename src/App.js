@@ -1,24 +1,25 @@
-import React from "react";
+import React, {useState} from "react";
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
-import NavBar from "./components/Navbar";
+import DepartmentSelector from "./components/DepartmentSelector";
 import EngineDisplayer from "./components/EngineDisplayer";
-import CreateForm from "./components/CreateForm";
-import UpdateForm from "./components/UpdateForm";
+import CreateEngineForm from "./components/CreateEngineForm";
+import UpdateEngineForm from "./components/UpdateEngineForm";
 
 const App = () => {
   document.title = "EMNF-S"
 
+  const storedDepartment = sessionStorage.getItem("storedDepartment")
+
   return (
     <React.Fragment>
-      <h1 className="app_title">Engine Manufacturing Status Manager</h1>
-
       <Router>
-        <NavBar/>
+        <DepartmentSelector/>
+        
         <Routes>
-          <Route path="/engine_department/engines" exact element={<EngineDisplayer/>}/>
-          <Route path="/engine_department/engines/create" exact element={<CreateForm/>}/>
-          <Route path="/engine_department/engines/update" exact element={<UpdateForm/>}/>
+          <Route path={`/engine_department/engines/${storedDepartment}`} exact element={<EngineDisplayer storedDepartment={storedDepartment}/>}/> 
+          <Route path={`/engine_department/engines/${storedDepartment}/create`} exact element={<CreateEngineForm storedDepartment={storedDepartment}/>}/>
+          <Route path={`/engine_department/engines/${storedDepartment}/update`} exact element={<UpdateEngineForm storedDepartment={storedDepartment}/>}/>
         </Routes>
       </Router>
     </React.Fragment>
