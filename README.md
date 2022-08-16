@@ -1,8 +1,8 @@
 # EMNF-S Manager 
 
-Engine Manufacturing Status Manager is a full-stack web application for my phase 3 software engineering course at Flatiron School. Front-end was built with React and Active Record, Sinatra, SQLite3 for Back-end.
+Engine Manufacturing Status Manager is a full-stack web application for my phase 3 software engineering course at Flatiron School. Front-end was built with **React** and **Active Record, Sinatra, SQLite3** for Back-end.
 
-This application is ideal for **Vehicle Engine Factory Staffs** who needs to view and manage engines that are being manufactured.
+This application is ideal for Vehicle Engine Factory Staffs who needs to view and manage engines that are being manufactured.
 
 <!-- **[View App demonstration in-progress]()** -->
 
@@ -14,6 +14,12 @@ This application is ideal for **Vehicle Engine Factory Staffs** who needs to vie
 - **Update** Engine Part(s) status.
 - **Create** New Engine or Department.
 - **Search** or **Delete** specific Engine.
+
+
+## Description
+- Database interaction by using Active Record.
+- Setting a one-to-many relationship between two models (EngineDepartment, Engine).
+- Created CRDU API in Sinatra which handles fetch requests from the React front-end.
 
 
 ## License
