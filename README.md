@@ -10,16 +10,16 @@ This application is ideal for Vehicle Engine Factory Staffs who needs to view an
 
 
 ## Features
-- **View** which parts of Engine are built to process.
-- **Update** Engine Part(s) status.
-- **Create** New Engine or Department.
-- **Search** or **Delete** specific Engine.
+- **View** which parts of Engine are built to process
+- **Update** Engine Part(s) status
+- **Create** New Engine or Department
+- **Search** or **Delete** specific Engine
 
 
 ## Description
-- Database interaction by using Active Record.
-- Setting a one-to-many relationship between two models (EngineDepartment, Engine).
-- Created CRDU API in Sinatra which handles fetch requests from the React front-end.
+- Database interaction by using Active Record
+- Setting a one-to-many relationship between two models (EngineDepartment, Engine)
+- Created CRDU API in Sinatra which handles fetch requests from the React front-end
 
 
 ## License
