@@ -1,5 +1,6 @@
 * {
   border-radius: 5px;
+  font-family: 'Oswald', sans-serif;
 }
 
 body {
@@ -16,102 +17,93 @@ code {
     monospace;
 }
 
+h2 {
+  text-align: center;
+}
+
+.link {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
 .app_title {
   margin-top: 0;
-  padding: 10px;
+  padding: 20px;
   text-align: center;
   background-color: rgb(240, 240, 240);
 }
 
 .select_department {
-  margin: auto;
+  margin: -2% auto 2.5% auto;
   text-align: center;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   width: 15%;
+  background-color:rgb(50, 50, 50);
+  padding: 10px;
+  color: rgb(255, 255, 255);
+  overflow: scroll;
 }
 
 .crud_form_button_container {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  justify-content: flex-end;
   position: relative;
   right: 20px;
 }
 
-.create_form_button {
-  padding: 0 80px;
-}
-
 .crud_form_button_container input {
   cursor: pointer;
+  margin-left: 2px;
 }
 
-.crud_form_button_container input:focus {
-  background-color: rgb(200, 255, 200);
-}
-
-.search_engine_form,
-.delete_engine_form {
-  display: flex;
-  margin: 10px 0;
-}
-
-.create_engine_form {
-  margin: auto;
+.form_head_container {
   display: flex;
   flex-direction: column;
-  border: 1px solid rgb(0, 0, 0);
-  padding: 10px;
-  width: 25%;
   text-align: center;
-}
-
-.create_engine_form input {
-  margin: 4px 0;
-}
-
-.update_engine_form_container {
-  margin: auto;
+  margin: 5% auto auto auto;
   width: 25%;
   padding: 10px;
   border: 1px solid rgb(0, 0, 0);
 }
 
-.update_non_engine_part_form {
+.form_head_input1_container input {
   display: flex;
   flex-direction: column;
+  margin: auto;
 }
 
-
-.update_engine_part_form {
+.form_head_input2_container {
   display: grid;
   grid-template-columns: auto auto;
   margin: 20px 0;
 }
 
-.update_engine_form_container_button {
-  margin-top: 6px;
-  justify-content: center;
-  width: 100%;
+.form_head_button_container {
+  display: flex;
+  flex-direction: column;
+  margin: 6px auto auto auto;
+  width: 25%;
 }
 
 .list_of_engine_container {
   display: grid;
   gap: 30px;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   padding: 20px;
 }
 
 .number_of_engine_container {
+  color: rgb(255, 255, 255);
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  background-color:rgb(50, 50, 50);
 }
 
 .list_of_engine_row {
   background-color: rgb(240, 240, 240);
   text-transform: uppercase;
-  text-align: left;
   border: 1px solid rgb(0, 0, 0);
   padding: 10px;
 }
@@ -123,26 +115,22 @@ code {
 .list_of_engine_non_part_container {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  margin: auto;
-  height: 140px;
+  justify-content: center;
   border: 1px solid rgb(0, 0, 0);
   background-color: rgb(255, 255, 255);
   overflow: scroll;
 }
 
 .list_of_engine_part_dotted_container {
-  font-weight: bold;
   display: grid;
-  padding: 4px;
   grid-template-columns: auto auto;
-  border: 1px dotted rgb(0, 0, 0);
+  border: 2px dotted rgb(0, 0, 0);
   background-color: rgb(255, 255, 255);
-  overflow: scroll;
   text-align: center;
 }
 
 .status_indicator {
+  font-weight: bold;
   display: flex;
   justify-content: space-around;
 }
