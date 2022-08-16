@@ -2,7 +2,7 @@
 
 Engine Manufacturing Status Manager is a full-stack web application for my phase 3 software engineering course at Flatiron School. Front-end was built with React and Active Record, Sinatra, SQLite3 for Back-end. This application is ideal for **Vehicle Engine Factory Staffs** who needs to view and manage engines that are being manufactured.
 
-**[View App demonstration in-progress]()**
+<!-- **[View App demonstration in-progress]()** -->
 
 > All information used in this project is not real.
 
