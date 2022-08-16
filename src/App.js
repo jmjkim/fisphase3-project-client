@@ -11,21 +11,20 @@ import UpdateEngineForm from "./components/UpdateEngineForm";
 const App = () => {
   document.title = "EMNF-S"
 
-  const sessionStoredDepartment = sessionStorage.getItem("sessionStoredDepartment")
-  const [storedDepartment, setStoredDepartment] = useState(sessionStoredDepartment)
+  const sessionStoredDepartmentId = sessionStorage.getItem("sessionStoredDepartmentId")
+  const [storedDepartmentId, setStoredDepartmentId] = useState(sessionStoredDepartmentId)
 
   return (
     <div>
       <h1 className="app_title">Engine Manufacturing Status Manager</h1>
 
       <Router>
-        <DepartmentSelector setStoredDepartment={setStoredDepartment}/>
-        
+        <DepartmentSelector setStoredDepartmentId={setStoredDepartmentId}/>
         <Routes>
-          <Route path={`/engines/${storedDepartment}`} exact element={<EngineDisplayer storedDepartment={storedDepartment}/>}/> 
-          <Route path={`/create`} exact element={<DepartmentForm storedDepartment={storedDepartment}/>}/>
-          <Route path={`/engines/${storedDepartment}/create`} exact element={<CreateEngineForm storedDepartment={storedDepartment}/>}/>
-          <Route path={`/engines/${storedDepartment}/update`} exact element={<UpdateEngineForm storedDepartment={storedDepartment}/>}/>
+          <Route path={`/departments/${storedDepartmentId}/engines`} exact element={<EngineDisplayer storedDepartmentId={storedDepartmentId}/>}/> 
+          <Route path={`/departments/create`} exact element={<DepartmentForm storedDepartmentId={storedDepartmentId}/>}/>
+          <Route path={`/departments/${storedDepartmentId}/engines/create`} exact element={<CreateEngineForm storedDepartmentId={storedDepartmentId}/>}/>
+          <Route path={`/departments/${storedDepartmentId}/engines/update`} exact element={<UpdateEngineForm storedDepartmentId={storedDepartmentId}/>}/>
         </Routes>
       </Router>
     </div>
