@@ -48,7 +48,8 @@ const UpdateEngineForm = ({storedDepartmentId}) => {
             <b style={{"marginBottom": "5%"}}>Update Engine Status</b>
 
             <div className="form_head_input1_container">
-                <label>Engine ID </label><input type="text" name="manufactured_engine_id" value={updateFormData.manufactured_engine_id} readOnly/>
+                <label>Engine ID </label><input type="text" name="manufactured_engine_id" value={updateFormData.manufactured_engine_id} onClick={() => alert("Manager's approval is required")} readOnly/>
+                <label>Engine Type </label><input type="text" name="engine_type" value={updateFormData.engine_type} onClick={() => alert("Manager's approval is required")} readOnly/>
                 <label>VIN </label><input type="text" name="associated_vehicle_vin" value={updateFormData.associated_vehicle_vin} onChange={(e) => handleChange(e)} required={true}/>
                 <label>Layout </label><input type="text" name="engine_layout" value={updateFormData.engine_layout} onChange={(e) => handleChange(e)} maxLength={10} required={true}/>
                 <label>Remark </label><input type="text" name="remark" value={updateFormData.remark} onChange={(e) => handleChange(e)} maxLength={100}/>

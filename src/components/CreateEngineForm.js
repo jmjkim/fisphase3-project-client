@@ -33,8 +33,8 @@ const CreateEngineForm = ({storedDepartmentId}) => {
             <br/>
 
             <div className="form_head_input1_container">
-                <label>Layout <input name="engine_layout" type="text" placeholder="ex: Inline10" onChange={handleChange} maxLength={10} required={true}/></label>
-                <label>Remark <input name="remark" type="text" maxLength={100} onChange={handleChange}/></label>
+                <label>Layout <input name="engine_layout" type="text" placeholder="ex: Inline10" onChange={handleChange} maxLength={10} required={true} autoComplete="off"/></label>
+                <label>Remark <input name="remark" type="text" maxLength={100} onChange={handleChange} autoComplete="off"/></label>
             </div>
 
             <div className="form_head_button_container">
